@@ -7,16 +7,16 @@ namespace onlineass.Data
 {
     public class TopicsRepo : ITopicsRepo
     {
-        private readonly OnlineassContext _context;
+        private readonly onlineassessmentContext _context;
 
-        public TopicsRepo(OnlineassContext context)
+        public TopicsRepo(onlineassessmentContext context)
         {
             _context = context;
         }
 
-        public IEnumerable<Topic> GetAllTopics()
+        public IEnumerable<TblTopics> GetAllTopics()
         {
-            return _context.Topics.ToList();
+            return _context.TblTopics.ToList();
         }
 
         public bool SaveChanges()
@@ -24,14 +24,14 @@ namespace onlineass.Data
             return (_context.SaveChanges() >= 0);
         }
 
-        public void CreateTopic(Topic topic)
+        public void CreateTopic(TblTopics topic)
         {
             if(topic == null)
             {
                 throw new System.ArgumentNullException(nameof(topic));
             }
 
-            _context.Topics.Add(topic);
+            _context.TblTopics.Add(topic);
         }
     }
 }

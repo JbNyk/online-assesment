@@ -9,8 +9,8 @@ namespace onlineass.Profiles
         public QuestionsProfile()
         {
                //Source -> Target
-               CreateMap<Question,QuestionsReadDto>();
-               CreateMap<QuestionsCreateDto,Question>();
+               CreateMap<TblQuestions,QuestionsReadDto>();
+               CreateMap<QuestionsCreateDto,TblQuestions>();
         }
    
     }

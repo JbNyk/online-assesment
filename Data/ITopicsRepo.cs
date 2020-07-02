@@ -6,9 +6,9 @@ namespace onlineass.Data
     public interface ITopicsRepo
  {
         bool SaveChanges();
-        IEnumerable<Topic> GetAllTopics();
+        IEnumerable<TblTopics> GetAllTopics();
         
-        void CreateTopic(Topic topic);
+        void CreateTopic(TblTopics topic);
 
   }
 }

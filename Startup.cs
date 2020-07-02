@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using onlineass.Data;
+using onlineass.Models;
 using ReflectionIT.Mvc.Paging;
 
 namespace onlineass
@@ -31,7 +32,7 @@ namespace onlineass
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<OnlineassContext>(opt => opt.UseSqlServer
+            services.AddDbContext<onlineassessmentContext>(opt => opt.UseSqlServer
                 (Configuration.GetConnectionString("CommanderConnection")));
 
             services.AddControllers().AddNewtonsoftJson(s => 

@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using onlineass.Dtos;
@@ -9,16 +10,16 @@ namespace onlineass.Data
 {
     public class QuestionsRepo : IQuestionsRepo
     {
-        private readonly OnlineassContext _context;
+        private readonly onlineassessmentContext _context;
 
-        public QuestionsRepo(OnlineassContext context)
+        public QuestionsRepo(onlineassessmentContext context)
         {
             _context = context;
         }
 
-        public IEnumerable<Question> GetAllQuestions(QuestionsReadDto questionsreaddto, int page)
+        public IEnumerable<TblQuestions> GetAllQuestions(QuestionsReadDto questionsreaddto, int page)
         {
-            IEnumerable<Question> result = _context.Questions;
+            IEnumerable<TblQuestions> result = _context.TblQuestions;
             if(questionsreaddto != null)
             {
                 if (!string.IsNullOrEmpty(questionsreaddto.Difficulty))
@@ -28,18 +29,18 @@ namespace onlineass.Data
                 if (!string.IsNullOrEmpty(questionsreaddto.QuestionTopic))
                   result = result.Where(x => x.QuestionTopic.Contains(questionsreaddto.QuestionTopic));
             }
-        
             return result.Skip(page * 2).Take(2).ToList();
+            
         }
 
-        public void CreateQuestion(Question question)
+        public void CreateQuestion(TblQuestions question)
         {
             if(question == null)
             {
                 throw new System.ArgumentNullException(nameof(question));
             }
 
-            _context.Questions.Add(question);
+            _context.TblQuestions.Add(question);
         }
 
         public bool SaveChanges()

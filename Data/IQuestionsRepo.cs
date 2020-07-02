@@ -10,8 +10,8 @@ namespace onlineass.Data
 
         bool SaveChanges();
         
-        IEnumerable<Question> GetAllQuestions(QuestionsReadDto questionsreaddto, int page);
+        IEnumerable<TblQuestions> GetAllQuestions(QuestionsReadDto questionsreaddto, int page);
 
-        void CreateQuestion(Question question);
+        void CreateQuestion(TblQuestions question);
     }
 }

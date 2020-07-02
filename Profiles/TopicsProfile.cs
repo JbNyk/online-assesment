@@ -9,8 +9,8 @@ namespace onlineass.Profiles
         public TopicsProfile()
         {
                //Source -> Target
-               CreateMap<Topic,TopicsReadDto>();
-               CreateMap<TopicsCreateDto,Topic>();
+               CreateMap<TblTopics,TopicsReadDto>();
+               CreateMap<TopicsCreateDto,TblTopics>();
         }
    
     }

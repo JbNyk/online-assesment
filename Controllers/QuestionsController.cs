@@ -41,7 +41,7 @@ namespace onlineass.Controllers
         [HttpPost]
         public ActionResult CreateCommand(QuestionsCreateDto QuestionsCreateDto)
         {
-            var questionModel = _mapper.Map<Question>(QuestionsCreateDto);
+            var questionModel = _mapper.Map<TblQuestions>(QuestionsCreateDto);
             _repository.CreateQuestion(questionModel);
             _repository.SaveChanges();
             return NoContent();
