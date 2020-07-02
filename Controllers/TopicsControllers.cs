@@ -22,7 +22,7 @@ namespace onlineass.Controllers
             _mapper     =  mapper;
         }
 
-        //Get api/commands
+        //Get api/topicsList
         [HttpGet]
         public ActionResult <IEnumerable<TopicsReadDto>> GetAllCommands()
         {
@@ -32,7 +32,7 @@ namespace onlineass.Controllers
             return NotFound();
         }
 
-        //Post api/commands
+        //Post api/topicsList
         [HttpPost]
         public ActionResult CreateCommand(TopicsCreateDto topicsCreateDto)
         {

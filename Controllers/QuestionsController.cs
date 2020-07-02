@@ -26,7 +26,7 @@ namespace onlineass.Controllers
             _mapper     =  mapper;
         }
 
-        //Get api/commands
+        //Get api/Questions/{page}
         [HttpPost("{page}")]
         public ActionResult <IEnumerable<QuestionsReadDto>> GetAllCommands( QuestionsReadDto questionsreaddto, int page)
         {
@@ -36,7 +36,7 @@ namespace onlineass.Controllers
             return NotFound();
         }
 
-        //Post api/commands/create
+        //Post api/Questions/create
         [Route("create")]
         [HttpPost]
         public ActionResult CreateCommand(QuestionsCreateDto QuestionsCreateDto)
